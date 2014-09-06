@@ -9,7 +9,7 @@ This gem provides you with a set of generators that you can use to organize your
 ### Installation
 
 Add this to your Gemfile 
-gem 'ng_generator_for_rails', git: 'git://github.com/abhisheksarka/ng_generator_for_rails.git'
+`gem 'ng_generator_for_rails', git: 'git://github.com/abhisheksarka/ng_generator_for_rails.git'`
 and run `bundle install`
 
 ### Usage
