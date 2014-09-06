@@ -41,4 +41,61 @@ Here `ap` is the namespace and your global application module. Every other angul
   ]);
 }());
 ```
+The generated code will set up the angular resource for you. If your model name has an underscore it will be converted to camel case for factory naming but file names and urls will be snake cased.
+
+for e.g. `rails g ng_data ap::user_contact` will generate the following
+
+`create  app/assets/javascripts/data/user_contact.js`
+
+```javascript
+(function(){
+  var app = angular.module("gen.data");
+  
+  app.factory("gen.data.userContacts", [ "$resource", 
+    function ($resource) {
+      var Resource = $resource( "/user_contacts/:id", { id: "@id" }),
+          proto = Resource.prototype;
+
+      //    
+      // Instance methods and class methods go here
+      // 
+
+      return Resource;
+    }
+  ]);
+}());
+```
+
+3. `rails g ng_component ap::age_slider` creates the following files
+
+```
+create  app/assets/javascripts/components/age_slider/directive.js
+create  app/assets/javascripts/components/age_slider/template.html
+create  app/assets/javascripts/components/age_slider/controller.js
+create  app/assets/javascripts/components/age_slider/module.js
+```
+
+The generated codes for these files will be as follows
+
+```javascript
+(function(){
+
+  var app = angular.module("ap.components.ageSlider");
+
+  app.directive("apAgeSlider", [function(){
+    return{
+      scope: { },
+      replace: true,
+      
+      templateUrl: "components/ageSlider/template.html",
+      controller: "ap.components.ageSlider.Controller",
+
+      link: function($scope, $element, $attributes){
+        // your DOM manipulation logic for this component goes here 
+      }
+    }; 
+  }]); 
+
+}());
+```
 
