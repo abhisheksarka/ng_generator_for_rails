@@ -191,7 +191,7 @@ e.g.
 ```
 //= require components/age_slider/module
 //= require_tree ./components/age_slider/
-// require components/module
+//= require components/module
 ```
 Take care of module dependencies.
 e.g.
