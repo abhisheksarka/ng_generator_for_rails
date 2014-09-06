@@ -1,0 +1,16 @@
+(function(){
+  var app = angular.module("<%= module_name %>");
+  
+  app.factory("<%= factory_name %>", [ "$resource", 
+    function ($resource) {
+      var Resource = $resource( "/<%= resource_name(false).pluralize %>/:id", { id: "@id" }),
+          proto = Resource.prototype;
+
+      //    
+      // Instance methods and class methods go here
+      // 
+
+      return Resource;
+    }
+  ]);
+}());

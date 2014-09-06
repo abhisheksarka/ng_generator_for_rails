@@ -1,0 +1,2 @@
+module NgGeneratorForRails
+end

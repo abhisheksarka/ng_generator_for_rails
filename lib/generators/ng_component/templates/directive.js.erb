@@ -1,0 +1,19 @@
+(function(){
+
+  var app = angular.module("<%= module_name %>");
+
+  app.directive("<%= directive_name %>", [function(){
+    return{
+      scope: { },
+      replace: true,
+      
+      templateUrl: "components/<%= component_name %>/template.html",
+      controller: "<%= controller_name %>",
+
+      link: function($scope, $element, $attributes){
+        // your DOM manipulation logic for this component goes here 
+      }
+    }; 
+  }]); 
+
+}());
