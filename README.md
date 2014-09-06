@@ -135,4 +135,52 @@ module.js
 
 `angular.module("gen.components.ageSlider", [ ]);`
 
+#### Section generator
+ Sections in this context are your pages. If you have a rails controller called `pages` with two actions `index` and `home` this is how you should generate the angular part of the view. 
+
+`rails g ng_section gen::pages index home`
+
+```
+create  app/assets/javascripts/sections/pages/module.js
+create  app/assets/javascripts/sections/pages/index_controller.js
+create  app/assets/javascripts/sections/pages/home_controller.js
+```
+
+Note: A section should only have controllers with minimal logic and nothing else because your components should encapsulate all the complex view logic.
+
+module.js
+
+`angular.module("gen.sections.pages", [ ]);`
+
+index_controller.js
+
+```javascript
+(function(){
+  
+  var app = angular.module("gen.sections.pages");
+  app.controller("gen.sections.pages.IndexController", ["$scope", function ($scope) {
+    
+    // controller logic goes here
+
+  }]);
+  
+}());
+```
+
+home_controller.js
+
+```javascript
+(function(){
+  
+  var app = angular.module("gen.sections.pages");
+  app.controller("gen.sections.pages.HomeController", ["$scope", function ($scope) {
+    
+    // controller logic goes here
+
+  }]);
+  
+}());
+```
+
+
 
