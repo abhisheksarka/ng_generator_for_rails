@@ -34,9 +34,9 @@ Here `ap` is the namespace and your global application module. Every other angul
 
 ```javascript
 (function(){
-  var app = angular.module("gen.data");
+  var app = angular.module("ap.data");
   
-  app.factory("gen.data.user", [ "$resource", 
+  app.factory("ap.data.user", [ "$resource", 
     function ($resource) {
       var Resource = $resource( "/users/:id", { id: "@id" }),
           proto = Resource.prototype;
@@ -58,9 +58,9 @@ for e.g. `rails g ng_data ap::user_contact` will generate the following
 
 ```javascript
 (function(){
-  var app = angular.module("gen.data");
+  var app = angular.module("ap.data");
   
-  app.factory("gen.data.userContacts", [ "$resource", 
+  app.factory("ap.data.userContacts", [ "$resource", 
     function ($resource) {
       var Resource = $resource( "/user_contacts/:id", { id: "@id" }),
           proto = Resource.prototype;
@@ -121,8 +121,8 @@ controller.js
 ```javascript
 (function(){
   
-  var app = angular.module("gen.components.ageSlider");
-  app.controller("gen.components.ageSlider.Controller", ["$scope", function ($scope) {
+  var app = angular.module("ap.components.ageSlider");
+  app.controller("ap.components.ageSlider.Controller", ["$scope", function ($scope) {
     
     // controller logic goes here
 
@@ -133,12 +133,12 @@ controller.js
 
 module.js
 
-`angular.module("gen.components.ageSlider", [ ]);`
+`angular.module("ap.components.ageSlider", [ ]);`
 
 #### Section generator
  Sections in this context are your pages. If you have a rails controller called `pages` with two actions `index` and `home` this is how you should generate the angular part of the view. 
 
-`rails g ng_section gen::pages index home`
+`rails g ng_section ap::pages index home`
 
 ```
 create  app/assets/javascripts/sections/pages/module.js
@@ -150,15 +150,15 @@ Note: A section should only have controllers with minimal logic and nothing else
 
 module.js
 
-`angular.module("gen.sections.pages", [ ]);`
+`angular.module("ap.sections.pages", [ ]);`
 
 index_controller.js
 
 ```javascript
 (function(){
   
-  var app = angular.module("gen.sections.pages");
-  app.controller("gen.sections.pages.IndexController", ["$scope", function ($scope) {
+  var app = angular.module("ap.sections.pages");
+  app.controller("ap.sections.pages.IndexController", ["$scope", function ($scope) {
     
     // controller logic goes here
 
@@ -172,8 +172,8 @@ home_controller.js
 ```javascript
 (function(){
   
-  var app = angular.module("gen.sections.pages");
-  app.controller("gen.sections.pages.HomeController", ["$scope", function ($scope) {
+  var app = angular.module("ap.sections.pages");
+  app.controller("ap.sections.pages.HomeController", ["$scope", function ($scope) {
     
     // controller logic goes here
 
