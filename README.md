@@ -184,18 +184,16 @@ home_controller.js
 
 ## Pitfalls
 
-1. Make sure you update your application.js file accordingly and require these files in the correct order. Ideally you should require the data module first, then the components module and finally the sections module. 
-2. For any module you should first import the module.js file and then the rest of the files in that directory. 
+Make sure you update your application.js file accordingly and require these files in the correct order. Ideally you should require the data module first, then the components module and finally the sections module. 
 
+For any module you should first import the module.js file and then the rest of the files in that directory. 
 e.g. 
 ```
 //= require components/age_slider/module
 //= require_tree ./components/age_slider/
-
 // require components/module
 ```
-3. Take care of module dependencies.
-
+Take care of module dependencies.
 e.g.
 `components/module` should list `components/age_slider/module` as a dependency so that when this `components/module` is injected in the global app it should be able to use `components/age_slider/module`.
 
