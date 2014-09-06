@@ -8,7 +8,8 @@ This gem provides you with a set of generators that you can use to organize your
 
 ### Usage
 
-1. `rails g ng_app ap` creates the following files in your `app/assets/javascripts` directory
+## Main application generator
+`rails g ng_app ap` creates the following files in your `app/assets/javascripts` directory
 
 ```
   create  app/assets/javascripts/module.js
@@ -19,7 +20,9 @@ This gem provides you with a set of generators that you can use to organize your
 
 Here `ap` is the namespace and your global application module. Every other angular component should be named using this namespace. This prevents your components to conflict with vendor components provided by third party libraries.
 
-2. `rails g ng_data ap::user` creates the following file with the following code
+## Resource/Data generator
+
+`rails g ng_data ap::user` creates the following file with the following code
 
 `create  app/assets/javascripts/data/user.js`
 
@@ -66,7 +69,9 @@ for e.g. `rails g ng_data ap::user_contact` will generate the following
 }());
 ```
 
-3. `rails g ng_component ap::age_slider` creates the following files
+## Component generator
+
+`rails g ng_component ap::age_slider` creates the following files
 
 ```
 create  app/assets/javascripts/components/age_slider/directive.js
