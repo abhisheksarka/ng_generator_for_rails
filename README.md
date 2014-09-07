@@ -1,10 +1,7 @@
 ## Ng Generator for Rails
 
-This gem provides you with a set of generators that you can use to organize your front end angular code. According to this architecture your app is divided into three layers
-
-1. Data layer(talks to the backend, contains buisness logic)
-2. Components layer(reusable view components, angular directives)
-3. Sections layer(page specific logic)
+Before installing this gem I suggest you read the following [http://abhisheksarka.github.io/structuring-angular-with-rails/](http://abhisheksarka.github.io/structuring-angular-with-rails/)
+These generators are based on the above mentioned architecture.
 
 ### Installation
 
