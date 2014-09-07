@@ -29,7 +29,7 @@ class NgDataGenerator < Rails::Generators::Base
   end
 
   def factory_name
-    "#{module_name}.#{resource_name}"
+    "#{module_name}.#{resource_name(true, false)}"
   end
 
 end
