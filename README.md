@@ -1,5 +1,7 @@
 ## Ng Generator for Rails
 
+[![Gem Version](https://badge.fury.io/rb/ng_generator_for_rails.svg)](http://badge.fury.io/rb/ng_generator_for_rails)
+
 Before installing this gem I suggest you read the following [http://abhisheksarka.github.io/structuring-angular-with-rails/](http://abhisheksarka.github.io/structuring-angular-with-rails/)
 These generators are based on the above mentioned architecture.
 
